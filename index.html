@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <meta name="description" id="meta-description" content="">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-mark" id="brand-logo-mark" aria-hidden="true"></span>
+        <span class="logo-text" id="brand-name">Studio</span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#classes" data-nav="classes">Classes</a>
+        <a href="#trainers" data-nav="trainers" data-team-label>Trainers</a>
+        <a href="#membership" data-nav="membership">Membership</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button type="button" class="btn" data-open-inquiry data-inquiry="trial" data-cta-label>Start Your Free Trial</button>
+      </nav>
+      <!-- Mobile Hamburger Toggle Button -->
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="mobile-toggle-bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-media" id="hero-media" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <span class="badge" id="hero-badge"></span>
+          <h1 id="hero-title"></h1>
+          <p class="hero-text" id="hero-text"></p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-lg" data-open-inquiry data-inquiry="trial" data-cta-label>Start Your Free Trial</button>
+            <a href="#classes" class="btn btn-outline btn-lg hero-secondary" data-nav="classes">View Schedule</a>
+          </div>
+          <ul class="hero-stats" id="hero-stats"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Classes & Timetable -->
+    <section class="section classes-section" id="classes">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Classes</span>
+          <h2 id="classes-title"></h2>
+          <p id="classes-subtitle"></p>
+        </div>
+
+        <div class="schedule-controls">
+          <div class="day-filters" id="day-filters" role="group" aria-label="Filter classes by day"></div>
+          <div class="select-filters">
+            <div class="select-field" id="category-field">
+              <label for="category-filter">Class type</label>
+              <select id="category-filter" class="form-control"></select>
+            </div>
+            <div class="select-field" id="instructor-field">
+              <label for="instructor-filter" id="instructor-filter-label">Instructor</label>
+              <select id="instructor-filter" class="form-control"></select>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm reset-filters" id="reset-filters" hidden>Clear filters</button>
+          </div>
+        </div>
+
+        <p class="schedule-count" id="schedule-count" aria-live="polite"></p>
+        <div class="schedule-list" id="schedule-list"></div>
+      </div>
+    </section>
+
+    <!-- Trainers -->
+    <section class="section section-alt trainers-section" id="trainers">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge" data-team-label>Trainers</span>
+          <h2 id="trainers-title"></h2>
+          <p id="trainers-subtitle"></p>
+        </div>
+        <div class="trainers-grid" id="trainers-grid"></div>
+      </div>
+    </section>
+
+    <!-- Membership & Pricing -->
+    <section class="section membership-section" id="membership">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Membership</span>
+          <h2 id="membership-title"></h2>
+          <p id="membership-subtitle"></p>
+        </div>
+        <div class="pricing-grid" id="pricing-grid"></div>
+        <p class="pricing-note" id="pricing-note"></p>
+      </div>
+    </section>
+
+    <!-- About & Facilities -->
+    <section class="section section-alt about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-media" id="about-media"></div>
+        <div class="about-content">
+          <span class="badge">About Us</span>
+          <h2 id="about-title"></h2>
+          <p class="about-subtitle" id="about-subtitle"></p>
+          <p id="about-p1"></p>
+          <p id="about-p2"></p>
+          <ul class="differentiators" id="differentiators"></ul>
+        </div>
+      </div>
+
+      <div class="container facilities" id="facilities" hidden>
+        <h3 class="facilities-title">Facilities & Amenities</h3>
+        <ul class="facilities-list" id="facilities-list"></ul>
+      </div>
+    </section>
+
+    <!-- Testimonials (hidden unless configured) -->
+    <section class="section testimonials-section" id="testimonials" hidden>
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Testimonials</span>
+          <h2>What Our Members Say</h2>
+        </div>
+        <div class="testimonials-grid" id="testimonials-grid"></div>
+      </div>
+    </section>
+
+    <!-- FAQs (hidden unless configured) -->
+    <section class="section faq-section" id="faq">
+      <div class="container faq-container">
+        <div class="section-header">
+          <span class="badge">FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <h3>Ready to get started?</h3>
+            <p>Send us an inquiry and our team will get back to you to confirm the details.</p>
+          </div>
+          <button type="button" class="btn btn-lg cta-banner-btn" data-open-inquiry data-inquiry="trial" data-cta-label>Start Your Free Trial</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4 id="footer-brand"></h4>
+        <p id="footer-tagline"></p>
+        <ul class="social-links" id="footer-social"></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="#classes" data-nav="classes">Classes</a></li>
+          <li><a href="#trainers" data-nav="trainers" data-team-label>Trainers</a></li>
+          <li><a href="#membership" data-nav="membership">Membership</a></li>
+          <li><a href="#faq" data-nav="faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-links" id="footer-contact"></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <ul class="footer-links" id="footer-hours"></ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p id="footer-copyright"></p>
+    </div>
+  </footer>
+
+  <!-- Membership Inquiry / Free Trial Modal -->
+  <div class="modal-overlay" id="inquiry-modal">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="inquiry-title">
+      <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close inquiry form">&times;</button>
+
+      <div id="inquiry-form-view">
+        <h3 id="inquiry-title">Join Us</h3>
+        <p class="modal-intro" id="inquiry-intro"></p>
+
+        <form id="inquiry-form" novalidate>
+          <fieldset class="form-group type-group" id="type-group">
+            <legend>I'm interested in</legend>
+            <div class="type-options" id="type-options"></div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="join-name">Full Name <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="join-name" name="name" class="form-control" autocomplete="name" maxlength="80" required aria-describedby="join-name-error">
+            <p class="field-error" id="join-name-error"></p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="join-phone">Phone Number <span class="required" aria-hidden="true">*</span></label>
+              <input type="tel" id="join-phone" name="phone" class="form-control" autocomplete="tel" placeholder="+1 555 000 0000" maxlength="20" required aria-describedby="join-phone-error">
+              <p class="field-error" id="join-phone-error"></p>
+            </div>
+            <div class="form-group">
+              <label for="join-email">Email <span class="optional" id="email-optional">(optional)</span><span class="required" id="email-required" aria-hidden="true" hidden>*</span></label>
+              <input type="email" id="join-email" name="email" class="form-control" autocomplete="email" maxlength="120" aria-describedby="join-email-error">
+              <p class="field-error" id="join-email-error"></p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" id="plan-group">
+              <label for="join-plan">Membership Plan</label>
+              <select id="join-plan" name="plan" class="form-control" aria-describedby="join-plan-error"></select>
+              <p class="field-error" id="join-plan-error"></p>
+            </div>
+            <div class="form-group" id="class-group">
+              <label for="join-class">Preferred Class</label>
+              <select id="join-class" name="class" class="form-control" aria-describedby="join-class-error"></select>
+              <p class="field-error" id="join-class-error"></p>
+            </div>
+          </div>
+
+          <div class="form-group" id="date-group">
+            <label for="join-date"><span id="date-label">Preferred Date</span> <span class="required" aria-hidden="true">*</span></label>
+            <input type="date" id="join-date" name="date" class="form-control" aria-describedby="join-date-error">
+            <p class="field-error" id="join-date-error"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="join-message">Message <span class="optional">(optional)</span></label>
+            <textarea id="join-message" name="message" class="form-control" rows="3" maxlength="500" placeholder="Goals, experience level or questions"></textarea>
+          </div>
+
+          <fieldset class="form-group method-group" id="method-group" hidden>
+            <legend>Send my inquiry via</legend>
+            <div class="method-options" id="method-options"></div>
+          </fieldset>
+
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+
+          <p class="privacy-note" id="privacy-note"></p>
+
+          <button type="submit" class="btn btn-lg btn-block" id="inquiry-submit">Send Inquiry</button>
+        </form>
+      </div>
+
+      <div class="inquiry-success" id="inquiry-success" hidden>
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <h3 id="success-title" tabindex="-1">Your inquiry is ready to send</h3>
+        <p id="success-text"></p>
+        <p class="success-note" id="success-note"></p>
+        <p class="success-fallback" id="success-fallback"></p>
+        <button type="button" class="btn btn-outline" id="success-close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="js/membership.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
